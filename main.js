@@ -11,7 +11,18 @@ app.use("/libs",express.static(__dirname + "/bower_components"))
 //Set Port
 var port = parseInt(process.argv[2]) || 3000;
 
-//Binf app
+//Bind app
 app.listen(port, function() {
     console.log("Application started on port %d", port);
 });
+
+//Receive Registration data
+app.get("/registration", function(req, resp){
+
+    console.log(JSON.stringify(req.query));
+    req.end;
+
+    resp.status(200);
+    resp.type("text/plain");
+    resp.end;
+})
