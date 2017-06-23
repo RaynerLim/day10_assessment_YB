@@ -18,11 +18,9 @@ app.listen(port, function() {
 
 //Receive Registration data
 app.get("/registration", function(req, resp){
-
+    
     console.log(JSON.stringify(req.query));
-    req.end;
-
     resp.status(200);
-    resp.type("text/plain");
-    resp.end;
+    resp.end();
+    
 })

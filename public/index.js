@@ -15,7 +15,8 @@
         regCon.address = "";
         regCon.country = "";
         regCon.contact = ""; 
-
+        regCon.message = "";
+         
         regCon.submit = function(){
             $http.get("/registration", {
                 params: {
@@ -28,11 +29,10 @@
                     country: regCon.country,
                     contact: regCon.contact, 
                 }
-            }).then(function(result){
-                regCon.message = "Registration Successful";
-                console.log(params[0] + params[1] + params[2] + params[3] + params[4] + params[5] + params[6]);
+            }).then(function(result) {
+                regCon.message = "Registration Completed";
             }).catch(function() {
-                regCon.message = "Registration failed Please check form"
+                regCon.message = "Failed";
             })
         }
     };
