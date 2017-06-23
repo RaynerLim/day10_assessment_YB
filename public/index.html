@@ -7,6 +7,45 @@
     <title>Document</title>
 </head>
 <body>
-    Hi
+    <form name "RegForm" novalidate>
+        <h1>Registration Form</h1>
+        <label for="email"> Email </label>
+        <input id="email" type="email" name="email" required>
+        <br>
+
+        <label for="password"> Password </label>
+        <input id="password" type="password" name="password" required>
+        <br>
+
+        <label for="name"> Email </label>
+        <input id="name" type="name" name="name" required>
+        <br>
+
+        <div>
+        <label for="genderMale"> Male </label>
+        <input type="radio" name="gender" value="male" required>
+        <label for="genderfemale"> Female </label>
+        <input type="radio" name="gender" value="female">
+        </div>
+        <br>
+
+        <label for="dob"> Date of Birth </label>
+        <input id="dob" type="dob" name="dob" required>
+        <br>
+
+        <label for="address"> Address </label>
+        <input id="address" type="address" name="address" required>
+        <br>
+
+        <label for="country"> Country </label>
+        <input id="country" type="country" name="country" required>
+        <br>
+
+        <label for="contact"> Phone </label>
+        <input id="contact" type="contact" name="contact" required>
+        <br>
+
+        <button type="submit" ng-disabled="RegForm.$invalid">Register</button>
+    </form>
 </body>
 </html>
