@@ -32,12 +32,6 @@
                 }
             })
 
-            //var currentTime = new Date();
-            //console.log(currentTime.getFullYear());
-            //console.log(regCon.dob.getDate());
-            //console.log(regCon.dob.getMonth());
-            //console.log(regCon.dob.getFullYear());
-
             if(vf){
                 
                 //Check password with regex

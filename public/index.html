@@ -8,55 +8,55 @@
 
     <script src="/libs/angular/angular.js"></script>
 
+    <link rel="stylesheet" href="/index.css">
+
     <script src="/index.js"></script>
 </head>
 <body ng-controller="RegCon as regCon">
 
 <form name="RegForm" ng-submit="regCon.submit(RegForm.$valid)" novalidate>
         <h1>Registration Form</h1>
-        <label for="email"> Email </label>
-        <input name="email" type="email" name="email" ng-model="regCon.email" required />
-        <br>
-
-        <label for="password"> Password </label>
-        <input id="password" type="password" name="password" ng-model="regCon.password" required>
-        <br>
-
-        <label for="name"> Name </label>
-        <input id="name" type="text" name="name" ng-model="regCon.name" required>
-        <br>
-
-        <div>
-        <label for="genderMale"> Male </label>
-        <input type="radio" name="gender" value="male" ng-model="regCon.gender" checked="checked" required>
+        <table>
+            <tr>
+        <td><label for="email"> Email </label></td>
+        <td><input name="email" type="email" name="email" ng-model="regCon.email" ng-class="{error: RegForm.email.$invalid}" required/></td>
+            </tr>
+            <tr>
+        <td><label for="password"> Password </label></td>
+        <td><input id="password" type="password" name="password" ng-model="regCon.password" ng-class="{error: RegForm.password.$invalid}" required></td>
+            </tr>
+            <tr>
+        <td><label for="name"> Name </label></td>
+        <td><input id="name" type="text" name="name" ng-model="regCon.name"ng-class="{error: RegForm.name.$invalid}" required></td>
+            </tr>
+            <tr>
+        <td><label for="genderMale"> Male </label>
+        <input type="radio" name="gender" value="male" ng-model="regCon.gender" checked="checked"></td>
+        <td>
         <label for="genderfemale"> Female </label>
-        <input type="radio" name="gender" value="female" ng-model="regCon.gender">
-        </div>
-        <br>
-
-        <label for="dob"> Date of Birth </label>
-        <input id="dob" type="date" name="dob" ng-model="regCon.dob" required>
-        <br>
-
-        <label for="address"> Address </label>
-        <input id="address" type="text" name="address" ng-model="regCon.address" required>
-        <br>
-
-        <label for="country"> Country </label>
-        <input id="country" type="text" name="country" ng-model="regCon.country" required>
-        <br>
-
-        <label for="contact"> Phone </label>
-        <input id="contact" type="text" name="contact" ng-model="regCon.contact" required>
-        <br>
-
-
-        <button type="submit" ng-disabled="RegForm.$invalid" value="RegForm.$valid">Register</button>{{regCon.message}}
-        <br>
-        
-        <h1>{{RegForm.$valid}}</h1>
-
-
+        <input type="radio" name="gender" value="female" ng-model="regCon.gender"></td>
+        </tr>
+        <tr>
+        <td><label for="dob"> Date of Birth </label></td>
+        <td><input id="dob" type="date" name="dob" ng-model="regCon.dob" ng-class="{error: RegForm.dob.$invalid}" required></td>
+        </tr>
+        <tr>
+        <td><label for="address"> Address </label></td>
+        <td><input id="address" type="text" name="address" ng-model="regCon.address" ng-class="{error: RegForm.address.$invalid}" required></td>
+        </tr>
+        <tr>
+        <td><label for="country"> Country </label></td>
+        <td><input id="country" type="text" name="country" ng-model="regCon.country" ng-class="{error: RegForm.country.$invalid}" required></td>
+        </tr>
+        <tr>
+        <td><label for="contact"> Phone </label></td>
+        <td><input id="contact" type="text" name="contact" ng-model="regCon.contact" ng-class="{error: RegForm.contact.$invalid}" required></td>
+        </tr>
+        <tr>
+        <td><button type="submit" ng-disabled="RegForm.$invalid" value="RegForm.$valid">Register</button></td>
+        </tr>
+        </table>
+        <h2>{{regCon.message}}</h2>
     </form>
 
 </body>
