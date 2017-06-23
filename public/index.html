@@ -12,7 +12,7 @@
 </head>
 <body ng-controller="RegCon as regCon">
 
-<form name="RegForm" ng-submit="regCon.submit()" novalidate>
+<form name="RegForm" ng-submit="regCon.submit(RegForm.$valid)" novalidate>
         <h1>Registration Form</h1>
         <label for="email"> Email </label>
         <input name="email" type="email" name="email" ng-model="regCon.email" required />
@@ -51,8 +51,9 @@
         <br>
 
 
-        <button type="submit" ng-disabled="RegForm.$invalid">Register</button>
+        <button type="submit" ng-disabled="RegForm.$invalid" value="RegForm.$valid">Register</button>{{regCon.message}}
         <br>
+        
         <h1>{{RegForm.$valid}}</h1>
 
 
