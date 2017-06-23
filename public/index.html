@@ -11,10 +11,11 @@
     <script src="/index.js"></script>
 </head>
 <body ng-controller="RegCon as regCon">
-    <form name "RegForm" novalidate ng-submit="regCon.submit()">
+
+<form name="RegForm" ng-submit="regCon.submit()" novalidate>
         <h1>Registration Form</h1>
         <label for="email"> Email </label>
-        <input id="email" type="email" name="email" ng-model="regCon.email" required>
+        <input name="email" type="email" name="email" ng-model="regCon.email" required />
         <br>
 
         <label for="password"> Password </label>
@@ -22,37 +23,40 @@
         <br>
 
         <label for="name"> Name </label>
-        <input id="name" type="name" name="name" ng-model="regCon.name" required>
+        <input id="name" type="text" name="name" ng-model="regCon.name" required>
         <br>
 
         <div>
         <label for="genderMale"> Male </label>
-        <input type="radio" name="gender" value="male" ng-model="regCon.gender" required>
+        <input type="radio" name="gender" value="male" ng-model="regCon.gender" checked="checked" required>
         <label for="genderfemale"> Female </label>
         <input type="radio" name="gender" value="female" ng-model="regCon.gender">
         </div>
         <br>
 
         <label for="dob"> Date of Birth </label>
-        <input id="dob" type="dob" name="dob" ng-model="regCon.dob" required>
+        <input id="dob" type="date" name="dob" ng-model="regCon.dob" required>
         <br>
 
         <label for="address"> Address </label>
-        <input id="address" type="address" name="address" ng-model="regCon.address" required>
+        <input id="address" type="text" name="address" ng-model="regCon.address" required>
         <br>
 
         <label for="country"> Country </label>
-        <input id="country" type="country" name="country" ng-model="regCon.country" required>
+        <input id="country" type="text" name="country" ng-model="regCon.country" required>
         <br>
 
         <label for="contact"> Phone </label>
-        <input id="contact" type="contact" name="contact" ng-model="regCon.contact" required>
+        <input id="contact" type="text" name="contact" ng-model="regCon.contact" required>
         <br>
+
 
         <button type="submit" ng-disabled="RegForm.$invalid">Register</button>
         <br>
-         {{ regCon.message }}
+        <h1>{{RegForm.$valid}}</h1>
+
 
     </form>
+
 </body>
 </html>
